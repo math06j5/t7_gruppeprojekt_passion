@@ -69,6 +69,7 @@
 
         .logo img {
             width: 5vw;
+            filter: invert(1);
         }
 
         .logo a {
