@@ -42,7 +42,7 @@
         .splash {
             background-image: url(img/burning_man_usa.jpg);
             background-size: cover;
-            background-attachment: fixed;
+            background-attachment: scroll;
             position: relative;
             width: 100vw;
             height: 100vh;
@@ -54,8 +54,7 @@
             align-items: center;
             min-height: 8vh;
             background-color: ;
-            position: fixed;
-            width: 100vw;
+            position: relative;
         }
 
         .logo {
@@ -115,9 +114,15 @@
             display: flex;
         }
 
+        .categori_nav .container {
+            border: 5px solid white;
+            padding: 5px;
+            z-index: 1;
+        }
+
         .categori {
-            width: 20vw;
-            height: 67vh;
+            width: 25vw;
+            height: 100vh;
             overflow: hidden;
             position: relative;
             transition: .5s;
@@ -125,9 +130,8 @@
         }
 
         .categori:hover {
-            background: #d90101;
             transition: .5s;
-            transform: scale(1.03);
+            transform: scale(1.01);
             cursor: pointer;
             z-index: 1;
         }
@@ -165,6 +169,7 @@
         /***************/
 
         section {
+            margin-top: 2vw;
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
         }
@@ -175,13 +180,13 @@
             font-family: monospace;
             text-align: center;
             background: white;
-            transition: .5s;
+            transition: .3s;
             transform: scale(1);
         }
 
         .destination:hover {
-            transition: .5s;
-            transform: scale(1.02);
+            transition: .3s;
+            transform: scale(1.01);
         }
 
         .destination .navn {
@@ -217,4 +222,10 @@
             margin: 4rem auto;
             padding: 4rem;
             background: black;
+            display: flex;
+            flex-direction: column;
+        }
+
+        #detalje .destination p {
+            color: white;
         }

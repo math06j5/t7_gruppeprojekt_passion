@@ -35,15 +35,13 @@
    function vis() {
        console.log(destinationer)
        const skabelon = document.querySelector("template").content; // Select indhold af html-skabelonen (article)
-       const placering = document.querySelector("#menukort"); // Container til artikler
+       const placering = document.querySelector("#rejse_destinationer"); // Container til artikler
        placering.textContent = ""; //Slet det der står i filter
 
        destinationer.feed.entry.forEach((destination) => { //Her looper vi igennem json (retterne)
            if (destination.gsx$kategori.$t == filter || filter == "alle") { // tjek hvilket køn retten har og sammenling med filter
 
                const klon = skabelon.cloneNode(true);
-
-               let billednavn =
 
 //               klon.querySelector(".destination").style.backgroundImage = "img/" + destination.gsx$billede.$t + ".jpg";;
 //               klon.querySelector(".destination").style.backgroundSize = "cover";
