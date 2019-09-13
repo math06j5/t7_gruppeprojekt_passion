@@ -24,7 +24,7 @@
 
    }
 
-   //Funktion der henter data fra Google Sheet (via url)
+   //Funktion der henter data fra Googxle Sheet (via url)
    async function loadData() {
        const response = await fetch(url);
        destinationer = await response.json();
@@ -42,10 +42,15 @@
            if (destination.gsx$kategori.$t == filter || filter == "alle") { // tjek hvilket køn retten har og sammenling med filter
 
                const klon = skabelon.cloneNode(true);
-               klon.querySelector(".beskrivelse-kort").textContent += " " + destination.gsx$kort.$t;
-               klon.querySelector(".ret-billede").src = "imgs/small/" + destination.gsx$billede.$t + "-sm.jpg";
 
-               klon.querySelector(".menu").addEventListener("click", () => {
+               let billednavn =
+
+//               klon.querySelector(".destination").style.backgroundImage = "img/" + destination.gsx$billede.$t + ".jpg";;
+//               klon.querySelector(".destination").style.backgroundSize = "cover";
+               klon.querySelector(".dest-billede").src = "img/" + destination.gsx$billede.$t + ".jpg";
+               klon.querySelector(".navn").textContent = destination.gsx$destination.$t;
+
+               klon.querySelector(".destination").addEventListener("click", () => {
                    visDetalje(destination);
                });
 
@@ -57,10 +62,10 @@
    function visDetalje(destination) {
        console.log(destination);
        document.querySelector("#detalje").style.display = "block";
-       document.querySelector("#detalje img").src = `imgs/large/${destination.gsx$billede.$t}.jpg`;
+       document.querySelector("#detalje img").src = `img/${destination.gsx$billede.$t}.jpg`;
        document.querySelector("#detalje img").alt = `Billede af ${destination.gsx$billede}`;
-       document.querySelector("#detalje .beskrivelse-lang").textContent = " " + destination.gsx$lang.$t;
-       document.querySelector("#detalje .pris").textContent = destination.gsx$pris.$t + " kr.";
+       document.querySelector("#detalje .beskrivelse-kort").textContent = " " + destination.gsx$kort.$t;
+//       document.querySelector("#detalje .pris").textContent = destination.gsx$pris.$t + " kr.";
 
        document.querySelector("#detalje .luk").addEventListener("click", skjulDetalje);
    }

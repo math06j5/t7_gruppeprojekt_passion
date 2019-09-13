@@ -40,7 +40,7 @@
         }
 
         .splash {
-            background-image: url(img/dronshot.jpg);
+            background-image: url(img/burning_man_usa.jpg);
             background-size: cover;
             background-attachment: fixed;
             position: relative;
@@ -157,4 +157,64 @@
             flex-direction: row;
             justify-content: center;
             align-items: center;
+        }
+
+
+
+
+        /***************/
+
+        section {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+        }
+
+        .destination {
+            display: flex;
+            position: relative;
+            font-family: monospace;
+            text-align: center;
+            background: white;
+            transition: .5s;
+            transform: scale(1);
+        }
+
+        .destination:hover {
+            transition: .5s;
+            transform: scale(1.02);
+        }
+
+        .destination .navn {
+            position: absolute;
+            bottom: 0%;
+            left: 0;
+        }
+
+        .valgt {
+            color: black;
+        }
+
+        #detalje {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: hsla(0, 0%, 21%, 0.53);
+            overflow: scroll;
+        }
+
+        #detalje .luk {
+            position: fixed;
+            top: 0;
+            right: 0;
+            font-size: 4rem;
+        }
+
+        #detalje .destination {
+            width: 50vw;
+            min-height: 50vh;
+            margin: 4rem auto;
+            padding: 4rem;
+            background: black;
         }
