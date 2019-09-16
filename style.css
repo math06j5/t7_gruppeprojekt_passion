@@ -33,10 +33,18 @@
             margin: 0;
         }
 
-        h1 {}
+        h1 {
+            font-family: 'Cantarell', sans-serif;
+            text-transform: uppercase;
+            font-size: 4rem;
+            color: white;
+        }
 
         h2 {
             font-family: 'Cantarell', sans-serif;
+            text-transform: uppercase;
+            font-size: 2rem;
+            color: white;
         }
 
         .splash {
@@ -104,9 +112,12 @@
 
         .splash .container h1 {
             font-weight: bold;
+            font-family: 'Cantarell', sans-serif;
+            text-transform: uppercase;
+            font-size: 6rem;
+            color: white;
         }
 
-        .splash .container h1,
         .splash .container p {
             color: black;
         }
@@ -207,10 +218,13 @@
 
         .filter button {
             border: 0;
-            color: grey;
-            margin: 1vw;
-            flex-basis: 100px;
+            color: black;
+            font-family: 'Cantarell', sans-serif;
             font-weight: bold;
+            text-transform: uppercase;
+            font-size: 1.5rem;
+            flex-basis: 100px;
+            font-weight: bolder;
             transform: scale(1);
             transition: .5s;
         }
