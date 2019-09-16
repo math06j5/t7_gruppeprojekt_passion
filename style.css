@@ -36,7 +36,7 @@
         h1 {}
 
         h2 {
-            font-family: sans-serif;
+            font-family: 'Cantarell', sans-serif;
         }
 
         .splash {
@@ -81,6 +81,23 @@
         }
 
         .logo .burger-icon {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            cursor: pointer;
+            transition: .4s;
+            transform: scale(1);
+            margin-left: 2vw;
+        }
+
+        .logo .burger-icon:hover {
+            transition: .4s;
+            transform: scale(1.02);
+        }
+
+        .logo .burger-icon div {
+            display: flex;
             width: 5vw;
             height: 2px;
             margin: 2px;
@@ -224,7 +241,7 @@
 
         /***************/
 
-        section {
+        #rejse_destinationer {
             margin-top: 0vw;
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -234,16 +251,29 @@
 
         .destination {
             display: flex;
-            position: relative;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
             font-family: monospace;
             text-align: center;
             background: rgba(255, 255, 255, 0.79);
+            height: 300px;
+            width: 100%;
         }
 
-        .destination .navn {
-            position: absolute;
-            bottom: 0%;
-            left: 0;
+        .destination .navn {}
+
+        .destination .devider_top {
+            border-bottom: 2px solid white;
+            height: 2px;
+            width: 0%;
+            transition: 3s;
+        }
+
+        .destination .devider_bottom {
+            border-top: 2px solid white;
+            height: 2px;
+            width: 20%;
         }
 
         .valgt {
