@@ -4,14 +4,12 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Unique Destinations</title>
+    <title></title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Cantarell&display=swap" rel="stylesheet">
 
     <style></style>
-
 </head>
-
-
 
 <body>
     <header class="splash">
@@ -21,43 +19,55 @@
                     <!--                    <h4>Logo</h4>-->
                     <img src="png/logo.png" alt="logo">
                 </a>
-                <div class="nav-icon3">
+                <div class="burger-icon">
                     <span></span>
                     <span></span>
                     <span></span>
                 </div>
             </div>
             <ul class="nav_links">
-                <li><a href="#">home</a></li>
-                <li><a href="dest.html">Destinations</a></li>
                 <li><a href="#">About</a></li>
                 <li><a href="#">Contact</a></li>
             </ul>
         </nav>
+        <article class="container">
+            <div class="wrapper">
+                <h1>Unique Destinations</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos eligendi fuga, reprehenderit, odio assumenda, provident in reiciendis possimus velit nihil doloribus est excepturi, accusamus! Eveniet laudantium non veniam asperiores magnam.</p>
+            </div>
+        </article>
     </header>
-    <nav class="categori_nav">
-        <div class="container">
-            <figure id="city_life" class="categori">
-                <a data-dest="storby" href="city.html">
-                    <img src="img/storby.jpg" alt="city">
-                    <h2>Storbyferie</h2>
-                </a>
-            </figure>
-            <figure id="aktiv" class="categori">
-                <img src="img/aktiv.jpg" alt="island">
-                <h2>Island</h2>
-            </figure>
-            <figure id="festival" class="categori">
-                <img src="img/festival.jpg" alt="drummer">
-                <h2>Festivals</h2>
-            </figure>
-            <figure id="forrest" class="categori">
-                <img src="img/sol_strand.jpg" alt="forrest">
-                <h2>Sol og strand</h2>
-            </figure>
-        </div>
+    <nav class="filter">
+        <button data-dest="alle" class="valgt">Alle</button>
+        <button data-dest="road-trip">Road trip</button>
+        <button data-dest="sol-strand">Sol & strand</button>
+        <button data-dest="storby">Storby</button>
+        <button data-dest="mad">Mad</button>
+        <button data-dest="aktiv">Aktiv</button>
+        <button data-dest="kulde">Kulde</button>
+        <button data-dest="off-grid">Off the grid</button>
+        <button data-dest="festivals">Festivals</button>
+        <button data-dest="must-see">Must see</button>
     </nav>
-    <script src="script.js"></script>
-</body>
+    <section id="rejse_destinationer"></section>
 
-</html>
+    <section id="detalje" class="">
+        <article class="destination">
+            <button class="luk">✖️</button>
+            <h2></h2>
+            <img src="" alt="">
+            <p class="beskrivelse-kort"></p>
+            <p class="pris"></p>
+        </article>
+    </section>
+
+
+    <template>
+        <article class="destination">
+            <img src="" alt="" class="dest-billede">
+            <h2 class="navn"></h2>
+        </article>
+    </template>
+
+    <script src="script.js"></script>
+</body></html>
