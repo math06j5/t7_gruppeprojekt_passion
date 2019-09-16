@@ -11,28 +11,32 @@
 </head>
 
 <body>
-    <header>
+    <header class="splash">
         <nav>
             <div class="logo">
                 <a href="index.html">
-                    <h4>Logo</h4>
+                    <!--                    <h4>Logo</h4>-->
+                    <img src="png/logo.png" alt="logo">
                 </a>
-                <div class="nav-icon3">
+                <div class="burger-icon">
                     <span></span>
                     <span></span>
                     <span></span>
                 </div>
             </div>
             <ul class="nav_links">
-                <li><a href="index.html">home</a></li>
-                <li><a href="dest.html">Destinations</a></li>
                 <li><a href="#">About</a></li>
                 <li><a href="#">Contact</a></li>
             </ul>
         </nav>
+        <article class="container">
+            <div class="wrapper">
+                <h1>Unique Destinations</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos eligendi fuga, reprehenderit, odio assumenda, provident in reiciendis possimus velit nihil doloribus est excepturi, accusamus! Eveniet laudantium non veniam asperiores magnam.</p>
+            </div>
+        </article>
     </header>
-    <h1>Big City life</h1>
-    <nav>
+    <nav class="filter">
         <button data-dest="alle" class="valgt">Alle</button>
         <button data-dest="road-trip">Road trip</button>
         <button data-dest="sol-strand">Sol & strand</button>
@@ -65,4 +69,6 @@
     </template>
 
     <script src="script.js"></script>
-</body></html>
+</body>
+
+</html>

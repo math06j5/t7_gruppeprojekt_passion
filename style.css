@@ -40,12 +40,13 @@
         }
 
         .splash {
-            background-image: url(img/burning_man_usa.jpg);
+            background-image: url(img/splash.jpg);
             background-size: cover;
             background-attachment: scroll;
             position: relative;
             width: 100vw;
             height: 100vh;
+            overflow: hidden
         }
 
         header nav {
@@ -77,6 +78,37 @@
             text-decoration: none;
             font-family: sans-serif;
             text-transform: uppercase;
+        }
+
+        .logo .burger-icon {
+            width: 5vw;
+            height: 2px;
+            margin: 2px;
+            background-color: black;
+        }
+
+        .splash .container {
+            display: flex;
+            justify-content: flex-end;
+            padding: 10vw 2vw;
+            margin: 10vw 7vw 0 0;
+        }
+
+        .splash .wrapper {
+            display: flex;
+            align-items: flex-end;
+            flex-direction: column;
+            width: 50vw;
+            text-align: right;
+        }
+
+        .splash .container h1 {
+            font-weight: bold;
+        }
+
+        .splash .container h1,
+        .splash .container p {
+            color: black;
         }
 
         .nav_links {
@@ -164,15 +196,40 @@
             align-items: center;
         }
 
+        .filter {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            align-content: center;
+            padding: 0 10vw 0 10vw;
+            margin: 2vw;
+        }
 
+        .filter button {
+            border: 0;
+            color: grey;
+            margin: 1vw;
+            flex-basis: 100px;
+            font-weight: bold;
+            transform: scale(1);
+            transition: .5s;
+        }
 
+        .filter button:hover {
+            color: black;
+            cursor: pointer;
+            transform: scale(1.02);
+            transition: .5s;
+        }
 
         /***************/
 
         section {
-            margin-top: 2vw;
+            margin-top: 0vw;
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            grid-gap: 1vw;
+            padding: 0vw 10vw;
         }
 
         .destination {
@@ -180,14 +237,7 @@
             position: relative;
             font-family: monospace;
             text-align: center;
-            background: white;
-            transition: .3s;
-            transform: scale(1);
-        }
-
-        .destination:hover {
-            transition: .3s;
-            transform: scale(1.01);
+            background: rgba(255, 255, 255, 0.79);
         }
 
         .destination .navn {
@@ -201,13 +251,15 @@
         }
 
         #detalje {
-            position: absolute;
+            position: fixed;
             top: 0;
             left: 0;
             width: 100vw;
             height: 100vh;
-            background: hsla(0, 0%, 21%, 0.53);
+            margin: 0;
+            background: rgba(255, 255, 255, 0.79);
             overflow: scroll;
+            justify-content: space-around;
         }
 
         #detalje .luk {
@@ -222,11 +274,11 @@
             min-height: 50vh;
             margin: 4rem auto;
             padding: 4rem;
-            background: black;
+            background: rgba(255, 255, 255, 0.79);
             display: flex;
             flex-direction: column;
         }
 
         #detalje .destination p {
-            color: white;
+            color: black;
         }
