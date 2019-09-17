@@ -9,14 +9,18 @@
    //Første funktion der kaldes efter DOM er loaded
    function start() {
        console.log(url);
-       const filterKnapper = document.querySelectorAll("nav button");
+       const filterKnapper = document.querySelectorAll(".filter button, .Sidenav .filter");
        filterKnapper.forEach(knap => knap.addEventListener("click", filtrerDestinationer));
        skjulDetalje()
        loadData();
+       closeNav()
+
+       document.querySelector("#FilterButton").addEventListener("click", openNav);
    }
 
    //En funktion der filtrerer retterne (json)
    function filtrerDestinationer() {
+       console.log("hej")
        filter = this.dataset.dest; //Sæt variable "filter" til aktuel værdi
        document.querySelector(".valgt").classList.remove("valgt"); // Fjern den valgte klasse på knappen
        this.classList.add("valgt"); //Marker den nye knap
@@ -73,5 +77,23 @@
    function skjulDetalje() {
        console.log(skjulDetalje);
        document.querySelector("#detalje").style.display = "none";
+   }
 
+
+
+
+   //******************
+
+   /* Set the width of the side navigation to 250px and the left margin of the page content to 250px and add a black background color to body */
+   function openNav() {
+       document.querySelector("#Sidenav").style.width = "250px";
+       //       document.style.backgroundColor = "rgba(0,0,0,0.4)";
+       document.querySelector(".closebtn").addEventListener("click", closeNav);
+   }
+
+   /* Set the width of the side navigation to 0 and the left margin of the page content to 0, and the background color of body to white */
+   function closeNav() {
+       console.log(document.querySelector("#rejse_destinationer"));
+       document.querySelector("#Sidenav").style.width = "0";
+       //       document.style.backgroundColor = "white";
    }

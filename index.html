@@ -13,22 +13,14 @@
 
 <body>
     <header class="splash">
+        <video src="mp4/splashvideo_final.mp4" muted autoplay loop controls></video>
         <nav>
             <div class="logo">
                 <a href="index.html">
                     <!--                    <h4>Logo</h4>-->
                     <img src="png/logo.png" alt="logo">
                 </a>
-                <div class="burger-icon">
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                </div>
             </div>
-            <ul class="nav_links">
-                <li><a href="#">About</a></li>
-                <li><a href="#">Contact</a></li>
-            </ul>
         </nav>
         <article class="container">
             <div class="wrapper">
@@ -37,7 +29,21 @@
             </div>
         </article>
     </header>
-    <nav class="filter">
+    <button id="FilterButton"><div></div></button>
+    <nav class="Sidenav" id="Sidenav">
+        <button class="closebtn">&times;</button>
+        <button data-dest="alle" class="valgt filter">Alle</button>
+        <button data-dest="road-trip" class="filter">Roadtrip</button>
+        <button data-dest="sol-strand" class="filter">Sol</button>
+        <button data-dest="storby" class="filter">Storby</button>
+        <button data-dest="mad" class="filter">Mad</button>
+        <button data-dest="aktiv" class="filter">Aktiv</button>
+        <button data-dest="kulde" class="filter">Kulde</button>
+        <button data-dest="off-grid" class="filter">Eventyr</button>
+        <button data-dest="festivals" class="filter">Festival</button>
+        <button data-dest="must-see" class="filter">Must see</button>
+    </nav>
+    <nav class="filter" id="">
         <button data-dest="alle" class="valgt">Alle</button>
         <button data-dest="road-trip">Roadtrip</button>
         <button data-dest="sol-strand">Sol</button>
@@ -50,7 +56,6 @@
         <button data-dest="must-see">Must see</button>
     </nav>
     <section id="rejse_destinationer"></section>
-
     <section id="detalje" class="">
         <article class="destination">
             <button class="luk">✖️</button>
@@ -71,4 +76,6 @@
     </template>
 
     <script src="script.js"></script>
-</body></html>
+</body>
+
+</html>
