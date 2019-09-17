@@ -57,7 +57,7 @@
             top: 0;
             left: 0;
             width: 100vw;
-            height: 56.25;
+            height: auto;
             overflow: hidden;
         }
 
@@ -118,7 +118,7 @@
 
         .splash .container {
             position: absolute;
-            top: 20vw;
+            top: 40vh;
             right: 5vw;
             display: flex;
             justify-content: flex-end;
@@ -133,23 +133,60 @@
         }
 
         .splash .container h1 {
-            font-weight: bold;
+            font-weight: 700;
             font-family: 'Cantarell', sans-serif;
             text-transform: uppercase;
             font-size: 7rem;
+            line-height: 6rem;
             color: white;
         }
 
-        .splash .container p {
-            color: black;
+        .splash .container h2 {
+            color: white;
             font-family: 'Cantarell', sans-serif;
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 2rem;
+            border-bottom: 2px solid white;
+            margin-top: 1.5vw;
+        }
+
+        .splash .container p {
+            color: white;
+            font-family: 'Cantarell', sans-serif;
+            font-weight: 700;
             text-transform: uppercase;
             font-size: 1rem;
-
+            margin top: 1.5vw;
         }
 
         header nav figure {
             display: flex;
+        }
+
+        header .down_arrow {
+            position: absolute;
+            filter: invert(1);
+            bottom: 5vw;
+            left: 48.5vw;
+            width: 3vw;
+            height: 3vw;
+            animation-name: puls;
+            animation-duration: 1.5s;
+            animation-iteration-count: infinite;
+            animation-fill-mode: both;
+            animation-timing-function: ease-in-out;
+            animation-direction: alternate;
+        }
+
+        @keyframes puls {
+            0% {
+                transform: translateY(-.5vw)
+            }
+
+            100% {
+                transform: translateY(1vw)
+            }
         }
 
         .container {
@@ -160,20 +197,27 @@
         }
 
         #FilterButton {
+            display: inherit;
             position: fixed;
             bottom: 1vw;
-            right: 0;
-            width: 6vw;
+            right: 1vw;
+            width: 5vw;
             height: 5vw;
             background-color: rgba(0, 0, 0, 0);
+            /*
+            border-radius: 50%;
             border-bottom-left-radius: 50%;
             border-top-left-radius: 50%;
             border-color: black;
             border-style: solid;
             border-width: 2px 0 2px 2px;
-            background-image: url(png/Filter.png);
+*/
+            border: 0;
+            background-image: url(png/settings.svg);
+            background-repeat: no-repeat;
             background-size: 80%;
-            background-position: right;
+            background-position: 50%;
+            cursor: pointer
         }
 
         .Sidenav {
@@ -223,13 +267,19 @@
         }
 
         /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
-        @media screen and (max-height: 450px) {
-            .Sidenav {
-                padding-top: 15px;
-            }
 
-            .Sidenav button {
-                font-size: 18px;
+        .Sidenav {
+            padding-top: 15px;
+        }
+
+        .Sidenav button {
+            font-size: 18px;
+        }
+
+
+        @media only screen and (min-width: 1154px) {
+            #FilterButton {
+                display: none;
             }
         }
 

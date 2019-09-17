@@ -6,14 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Unique Destination</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css?family=Cantarell&display=swap" rel="stylesheet">
+    <!--    <link href="https://fonts.googleapis.com/css?family=Cantarell&display=swap" rel="stylesheet">-->
+    <link href="https://fonts.googleapis.com/css?family=Cantarell:400,700&display=swap" rel="stylesheet">
 
     <style></style>
 </head>
 
 <body>
     <header class="splash">
-        <video src="mp4/splashvideo_final.mp4" muted autoplay loop controls></video>
+        <video src="mp4/splashvideo_final.mp4" muted autoplay loop></video>
         <nav>
             <div class="logo">
                 <a href="index.html">
@@ -25,9 +26,13 @@
         <article class="container">
             <div class="wrapper">
                 <h1>Unique Destinations</h1>
-                <p>Ved du ikke hvor du skal tage på ferie?</p>
+                <h2>Jordens Unikaer samlet et sted</h2>
+                <p>Unique Destination tilbyder rejse-inspiration fra Færøernes utrolige landskaber, Mexico Citys spændende kultur til safari i Tanzinia.</p>
             </div>
         </article>
+        <a href="#down_arrow" class="down_arrow" id="down_arrow">
+            <img src="png/down_arrow.png" alt="down arrow icon">
+        </a>
     </header>
     <button id="FilterButton">
         <div></div>
@@ -45,7 +50,7 @@
         <button data-dest="festivals" class="filter">Festival</button>
         <button data-dest="must-see" class="filter">Must see</button>
     </nav>
-    <nav class="filter" id="">
+    <nav class="filter" id="inline_filter">
         <button data-dest="alle" class="valgt">Alle</button>
         <button data-dest="road-trip">Roadtrip</button>
         <button data-dest="sol-strand">Sol</button>
