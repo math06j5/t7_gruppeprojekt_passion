@@ -13,22 +13,14 @@
 
 <body>
     <header class="splash">
+        <video src="mp4/splashvideo_final.mp4" muted autoplay loop controls></video>
         <nav>
             <div class="logo">
                 <a href="index.html">
                     <!--                    <h4>Logo</h4>-->
                     <img src="png/logo.png" alt="logo">
                 </a>
-                <div class="burger-icon">
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                </div>
             </div>
-            <ul class="nav_links">
-                <li><a href="#">About</a></li>
-                <li><a href="#">Contact</a></li>
-            </ul>
         </nav>
         <article class="container">
             <div class="wrapper">
@@ -37,20 +29,37 @@
             </div>
         </article>
     </header>
-    <nav class="filter">
+    <button id="FilterButton">
+        <div></div>
+    </button>
+    <nav class="Sidenav" id="Sidenav">
+        <button class="closebtn">&times;</button>
+        <button data-dest="alle" class="valgt filter">Alle</button>
+        <button data-dest="road-trip" class="filter">Roadtrip</button>
+        <button data-dest="sol-strand" class="filter">Sol</button>
+        <button data-dest="storby" class="filter">Storby</button>
+        <button data-dest="mad" class="filter">Mad</button>
+        <button data-dest="aktiv" class="filter">Aktiv</button>
+        <button data-dest="kulde" class="filter">Kulde</button>
+        <button data-dest="off-grid" class="filter">Eventyr</button>
+        <button data-dest="festivals" class="filter">Festival</button>
+        <button data-dest="must-see" class="filter">Must see</button>
+    </nav>
+    <nav class="filter" id="">
         <button data-dest="alle" class="valgt">Alle</button>
-        <button data-dest="road-trip">Road trip</button>
+        <button data-dest="road-trip">Roadtrip</button>
         <button data-dest="sol-strand">Sol</button>
         <button data-dest="storby">Storby</button>
         <button data-dest="mad">Mad</button>
         <button data-dest="aktiv">Aktiv</button>
         <button data-dest="kulde">Kulde</button>
         <button data-dest="off-grid">Eventyr</button>
-        <button data-dest="festivals">Festivals</button>
+        <button data-dest="festivals">Festival</button>
         <button data-dest="must-see">Must see</button>
+        <button data-dest="random" id="random">Random</button>
     </nav>
-    <section id="rejse_destinationer"></section>
 
+    <section id="rejse_destinationer"></section>
     <section id="detalje" class="">
         <article class="destination">
             <button class="luk">✖️</button>
@@ -64,7 +73,6 @@
 
     <template>
         <article class="destination">
-            <div class="devider_top"></div>
             <h2 class="navn"></h2>
             <div class="devider_bottom"></div>
 
