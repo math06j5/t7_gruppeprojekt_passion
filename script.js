@@ -129,6 +129,7 @@
        //       document.style.backgroundColor = "rgba(0,0,0,0.4)";
        document.querySelector(".closebtn").addEventListener("click", closeNav);
    }
+<<<<<<< HEAD
 
    /* Set the width of the side navigation to 0 and the left margin of the page content to 0, and the background color of body to white */
    function closeNav() {
@@ -143,5 +144,12 @@
        document.querySelector("#detalje").style.display = "none";
        filter = "alle";
        vis();
+=======
+>>>>>>> origin/master
 
+   /* Set the width of the side navigation to 0 and the left margin of the page content to 0, and the background color of body to white */
+   function closeNav() {
+       console.log(document.querySelector("#rejse_destinationer"));
+       document.querySelector("#Sidenav").style.width = "0";
+       //       document.style.backgroundColor = "white";
    }
