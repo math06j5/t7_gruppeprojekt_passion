@@ -5,13 +5,15 @@
    const url = `https://spreadsheets.google.com/feeds/list/${sheetID}/od6/public/values?alt=json`;
    let destinationer;
    let filter = "alle";
+   let antalRows; //Vi definerer antallet af data-linjer for at kunne lave random-funktionen
+
 
    //Første funktion der kaldes efter DOM er loaded
    function start() {
        console.log(url);
        const filterKnapper = document.querySelectorAll(".filter button, .Sidenav .filter");
        filterKnapper.forEach(knap => knap.addEventListener("click", filtrerDestinationer));
-       skjulDetalje()
+       //skjulDetalje();
        loadData();
        closeNav()
 
@@ -37,10 +39,45 @@
 
    //Funktion der viser retterne i liste view
    function vis() {
+       antalRows = destinationer.feed.entry.length;
        console.log(destinationer)
        const skabelon = document.querySelector("template").content; // Select indhold af html-skabelonen (article)
        const placering = document.querySelector("#rejse_destinationer"); // Container til artikler
        placering.textContent = ""; //Slet det der står i filter
+
+
+       if (filter == "random") {
+           const randomTal = Math.floor(Math.random() * antalRows); // Random-funktionen laves for at kunne fremvise en tilfældig destination
+           const destination = destinationer.feed.entry[randomTal]; // Den random destination kaldes
+
+           document.querySelector("#detalje").style.display = "block";
+           document.querySelector("#detalje img").src = `img/${destination.gsx$billede.$t}.jpg`;
+           document.querySelector("#detalje img").alt = `Billede af ${destination.gsx$billede}`;
+           document.querySelector("#detalje .beskrivelse-kort").textContent = " " + destination.gsx$kort.$t;
+           //       document.querySelector("#detalje .pris").textContent = destination.gsx$pris.$t + " kr.";
+
+
+           document.querySelector("#detalje .luk").addEventListener("click", skjulDetaljeRandom);
+
+           { // tjek hvilket køn retten har og sammenling med filter
+
+               const klon = skabelon.cloneNode(true);
+
+               //               klon.querySelector(".destination").style.backgroundImage = "img/" + destination.gsx$billede.$t + ".jpg";;
+               //               klon.querySelector(".destination").style.backgroundImage = "url('img/alaska.jpg')";;
+               klon.querySelector(".destination").style.backgroundImage = "url('img/" + destination.gsx$billede.$t + ".jpg')";
+               klon.querySelector(".destination").style.backgroundSize = "cover";
+               //               klon.querySelector(".dest-billede").src = "img/" + destination.gsx$billede.$t + ".jpg";
+               klon.querySelector(".navn").textContent = destination.gsx$destination.$t;
+
+               klon.querySelector(".destination").addEventListener("click", () => {
+                   visDetalje(destination);
+               });
+
+               placering.appendChild(klon);
+           }
+
+       }
 
        destinationer.feed.entry.forEach((destination) => { //Her looper vi igennem json (retterne)
            if (destination.gsx$kategori.$t == filter || filter == "alle") { // tjek hvilket køn retten har og sammenling med filter
@@ -62,6 +99,8 @@
            }
        })
    }
+
+
 
    function visDetalje(destination) {
        console.log(destination);
@@ -96,4 +135,12 @@
        console.log(document.querySelector("#rejse_destinationer"));
        document.querySelector("#Sidenav").style.width = "0";
        //       document.style.backgroundColor = "white";
+   }
+
+
+   function skjulDetaljeRandom() {
+       console.log(skjulDetaljeRandom);
+       document.querySelector("#detalje").style.display = "none";
+       filter = "alle";
+       vis();
    }
