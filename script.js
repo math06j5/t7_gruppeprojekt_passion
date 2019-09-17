@@ -11,7 +11,7 @@
    //Første funktion der kaldes efter DOM er loaded
    function start() {
        console.log(url);
-       const filterKnapper = document.querySelectorAll(".filter button, .Sidenav .filter");
+       const filterKnapper = document.querySelectorAll(".filter button, .Sidenav .filter, #random");
        filterKnapper.forEach(knap => knap.addEventListener("click", filtrerDestinationer));
        //skjulDetalje();
        loadData();

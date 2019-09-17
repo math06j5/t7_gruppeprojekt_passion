@@ -148,20 +148,38 @@
             text-transform: uppercase;
             font-size: 2rem;
             border-bottom: 2px solid white;
-            margin-top: 1.5vw;
+            margin-top: .2vw;
+            margin-bottom: 1vw;
         }
 
         .splash .container p {
             color: white;
             font-family: 'Cantarell', sans-serif;
             font-weight: 700;
-            text-transform: uppercase;
+            text-transform: capitalize;
             font-size: 1rem;
-            margin top: 1.5vw;
         }
 
         header nav figure {
             display: flex;
+        }
+
+        #random {
+            margin-top: 4vw;
+            padding: .7vw 1.5vw;
+            border-radius: 0;
+            border: 0;
+            cursor: pointer;
+            font-size: 1.5rem;
+            text-transform: uppercase;
+            transition: .5s;
+            transform: scale(1);
+        }
+
+        #random:hover {
+            transition: .5s;
+            transform: scale(1.02);
+            background-color: #dbdbdb;
         }
 
         header .down_arrow {
@@ -172,7 +190,7 @@
             width: 3vw;
             height: 3vw;
             animation-name: puls;
-            animation-duration: 1.5s;
+            animation-duration: .9s;
             animation-iteration-count: infinite;
             animation-fill-mode: both;
             animation-timing-function: ease-in-out;
@@ -181,11 +199,25 @@
 
         @keyframes puls {
             0% {
-                transform: translateY(-.5vw)
+                transform: translateY(-.2vw)
             }
 
             100% {
                 transform: translateY(1vw)
+            }
+        }
+
+        header .down_arrow:hover {
+            animation-name: pulsStop;
+        }
+
+        @keyframes pulsStop {
+            0% {
+                transform: translateY(0vw)
+            }
+
+            100% {
+                transform: translateY(0vw)
             }
         }
 
