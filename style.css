@@ -367,7 +367,22 @@
             cursor: pointer;
         }
 
-        .destination .navn {}
+        .destination .navn {
+            position: relative;
+        }
+
+
+        .destination .navn::after {
+            content: '';
+            display: block;
+            border-bottom: solid 3px white;
+            transform: scaleX(0);
+            transition: transform .3s ease-in-out;
+        }
+
+        .destination:hover h2::after {
+            transform: scaleX(.7);
+        }
 
         .destination .devider_bottom {
             border-top: 2px solid white;
