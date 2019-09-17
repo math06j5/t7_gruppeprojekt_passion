@@ -238,7 +238,7 @@
             font-family: 'Cantarell', sans-serif;
             font-weight: bold;
             text-transform: uppercase;
-            font-size: 1.5rem;
+            font-size: 1.7rem;
             flex-basis: 100px;
             font-weight: bolder;
             transform: scale(1);
@@ -277,13 +277,6 @@
 
         .destination .navn {}
 
-        .destination .devider_top {
-            border-bottom: 2px solid white;
-            height: 2px;
-            width: 0%;
-            transition: 3s;
-        }
-
         .destination .devider_bottom {
             border-top: 2px solid white;
             height: 2px;
@@ -319,7 +312,7 @@
             width: 50vw;
             min-height: 50vh;
             margin: 4rem auto;
-            padding: 20vw 0 20vw;
+            padding: 20vw 0 50vw;
             background: rgb(255, 255, 255);
             display: flex;
             flex-direction: column;
@@ -329,4 +322,5 @@
             font-size: 1.5rem;
             color: black;
             font-family: 'Cantarell', sans-serif;
+            text-align: left;
         }
