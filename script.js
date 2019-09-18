@@ -37,7 +37,7 @@
        vis();
    }
 
-   //Funktion der viser retterne i liste view
+   //Funktion der viser destinationer i liste view
    function vis() {
        antalRows = destinationer.feed.entry.length; // Her definerer vi antallet af linjer i vores feed
        const skabelon = document.querySelector("template").content; // Select indhold af html-skabelonen (article)
