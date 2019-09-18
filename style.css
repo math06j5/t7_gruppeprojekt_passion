@@ -43,7 +43,6 @@
         }
 
         .splash {
-            background-image: url(img/splash.jpg);
             background-size: cover;
             background-attachment: scroll;
             position: relative;
@@ -431,4 +430,50 @@
             color: black;
             font-family: 'Cantarell', sans-serif;
             text-align: left;
+        }
+
+        footer {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            background-color: cyan;
+            margin-top: 7vw;
+            padding: 3vw 2vw;
+        }
+
+        footer section {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+
+        footer article {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        footer a {
+            text-decoration: none;
+            color: black;
+            cursor: pointer;
+        }
+
+        footer figure {
+            display: flex;
+        }
+
+        footer figure img {
+            filter: invert(1);
+            width: 2vw;
+            margin: 1vw;
+            cursor: pointer;
+        }
+
+        footer figure img:nth-child(1) {
+            margin-left: 0;
+        }
+
+        footer p {
+            text-align: center;
         }
