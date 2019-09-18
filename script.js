@@ -4,8 +4,8 @@
    //const sheetID = "1skKi4NYctpp0zzVurux1XRiohfUcxHDd37XbzYvD7yE";
    const url = `https://spreadsheets.google.com/feeds/list/${sheetID}/od6/public/values?alt=json`;
    let destinationer;
-   let filter = "alle";
-   let antalRows; //Vi definerer antallet af data-linjer for at kunne lave random-funktionen
+   let filter = "alle"; //
+   let antalRows; // Vi definerer antallet af data-linjer for at kunne lave random-funktionen
 
 
    //Første funktion der kaldes efter DOM er loaded
@@ -31,17 +31,16 @@
 
    }
 
-   //Funktion der henter data fra Googxle Sheet (via url)
+   //Funktion der henter data fra Google Sheet (via url)
    async function loadData() {
        const response = await fetch(url);
        destinationer = await response.json();
        vis();
    }
 
-   //Funktion der viser retterne i liste view
+   //Funktion der viser destinationer i liste view
    function vis() {
-       antalRows = destinationer.feed.entry.length;
-       console.log(destinationer)
+       antalRows = destinationer.feed.entry.length; // Her definerer vi antallet af linjer i vores feed
        const skabelon = document.querySelector("template").content; // Select indhold af html-skabelonen (article)
        const placering = document.querySelector("#rejse_destinationer"); // Container til artikler
        placering.textContent = ""; //Slet det der står i filter
@@ -55,7 +54,6 @@
            document.querySelector("#detalje img").src = `img/${destination.gsx$billede.$t}.jpg`;
            document.querySelector("#detalje img").alt = `Billede af ${destination.gsx$billede}`;
            document.querySelector("#detalje .beskrivelse-kort").textContent = " " + destination.gsx$kort.$t;
-           //       document.querySelector("#detalje .pris").textContent = destination.gsx$pris.$t + " kr.";
 
 
            document.querySelector("#detalje .luk").addEventListener("click", skjulDetaljeRandom);
