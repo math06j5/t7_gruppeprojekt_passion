@@ -17,6 +17,7 @@
        loadData();
        closeNav()
 
+       //Klikevent for filtreringsknappen på mobil versionen
        document.querySelector("#FilterButton").addEventListener("click", openNav);
    }
 
