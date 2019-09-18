@@ -231,6 +231,10 @@
             align-items: center;
         }
 
+        /********************************************************************/
+
+        /********** filtreringsmenu på mobil version glider ind fra højre **********/
+
         #FilterButton {
             display: inherit;
             position: fixed;
@@ -239,14 +243,6 @@
             width: 5vw;
             height: 5vw;
             background-color: rgba(0, 0, 0, 0);
-            /*
-            border-radius: 50%;
-            border-bottom-left-radius: 50%;
-            border-top-left-radius: 50%;
-            border-color: black;
-            border-style: solid;
-            border-width: 2px 0 2px 2px;
-*/
             border: 0;
             background-image: url(png/settings.svg);
             background-repeat: no-repeat;
@@ -257,28 +253,19 @@
 
         .Sidenav {
             height: 100%;
-            /* 100% Full-height */
             width: 0;
-            /* 0 width - change this with JavaScript */
             position: fixed;
-            /* Stay in place */
             z-index: 100;
-            /* Stay on top */
             top: 0;
-            /* Stay at the top */
             right: 0;
             background-color: white;
-
             overflow-x: hidden;
-            /* Disable horizontal scroll */
             padding-top: 60px;
-            /* Place content 60px from the top */
             transition: 0.5s;
-            /* 0.5 second transition effect to slide in the sidenav */
         }
 
 
-        /* The navigation menu links */
+        /* filter knapper*/
         .Sidenav button {
             padding: 8px 8px 8px 32px;
             font-size: 25px;
@@ -289,12 +276,13 @@
             text-transform: uppercase;
         }
 
-        /* When you mouse over the navigation links, change their color */
+        /* filter knapper hover effekt */
         .Sidenav button:hover {
             color: #f1f1f1;
             cursor: pointer;
         }
 
+        /* lukkeknap filtreringsmenu */
         .Sidenav .closebtn {
             position: absolute;
             top: 0;
@@ -303,16 +291,20 @@
             margin-left: 50px;
         }
 
-        /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
-
-
-
+        /* ved skærme over 1154px skal filtreringsknapper samt menu'en ikke vises */
+        /* skærme som er større end en ipad */
         @media only screen and (min-width: 1154px) {
             #FilterButton {
                 display: none;
             }
         }
 
+        /********************************************************************/
+
+
+        /********** filtreringsbjælke under splash **********/
+
+        /* filtrerings bjælke under splash billede */
         .filter {
             display: flex;
             flex-wrap: wrap;
@@ -322,6 +314,8 @@
             margin: 2vw;
         }
 
+
+        /* filtrerings knap styling */
         .filter button {
             border: 0;
             color: black;
@@ -335,6 +329,7 @@
             transition: .5s;
         }
 
+        /* filtrerings knap hover effekt */
         .filter button:hover {
             color: black;
             cursor: pointer;
@@ -342,8 +337,16 @@
             transition: .5s;
         }
 
-        /***************/
+        /* valgt class på filtreringsbjælken */
+        .valgt {
+            color: black;
+        }
 
+        /********************************************************************/
+
+        /********** sektion med rejsedestinationer **********/
+
+        /* overordnet grid styling */
         #rejse_destinationer {
             margin-top: 0vw;
             display: grid;
@@ -352,6 +355,7 @@
             padding: 0vw 10vw;
         }
 
+        /* styling af destinationer */
         .destination {
             display: flex;
             justify-content: center;
@@ -365,11 +369,12 @@
             cursor: pointer;
         }
 
+
         .destination .navn {
             position: relative;
         }
 
-
+        /* effekt på destination - linje kører ud til hver side fra midten */
         .destination .navn::after {
             content: '';
             display: block;
@@ -378,19 +383,14 @@
             transition: transform .3s ease-in-out;
         }
 
+        /* hover effekt som afktiver overnstående ::after (effekt) */
         .destination:hover h2::after {
             transform: scaleX(.7);
         }
 
-        .destination .devider_bottom {
-            border-top: 2px solid white;
-            height: 2px;
-            width: 20%;
-        }
+        /********************************************************************/
 
-        .valgt {
-            color: black;
-        }
+        /********** deltaje visning for destinationer **********/
 
         #detalje {
             position: fixed;
@@ -407,6 +407,7 @@
             display: none;
         }
 
+        /* detaljevisning lukke knap */
         #detalje .luk {
             position: fixed;
             top: 0;
@@ -414,6 +415,7 @@
             font-size: 4rem;
         }
 
+        /* detaljevisning lukke knap */
         #detalje .destination {
             width: 50vw;
             min-height: 50vh;
@@ -431,6 +433,10 @@
             text-align: left;
         }
 
+
+        /********************************************************************/
+
+        /********** Footer **********/
         footer {
             display: flex;
             justify-content: center;
@@ -439,6 +445,7 @@
             padding: 3vw 2vw;
         }
 
+        /* footer top devider */
         footer::before {
             content: "";
             border-top: 2px solid black;
