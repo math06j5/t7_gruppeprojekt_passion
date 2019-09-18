@@ -440,15 +440,22 @@
             display: flex;
             justify-content: center;
             flex-direction: column;
-            background-color: cyan;
             margin-top: 7vw;
             padding: 3vw 2vw;
+        }
+
+        footer::before {
+            content: "";
+            border-top: 2px solid black;
+            width: 90%;
+            margin: auto;
         }
 
         footer section {
             display: flex;
             flex-direction: row;
             justify-content: space-between;
+            margin-top: 3vw;
         }
 
         footer article {
@@ -468,7 +475,6 @@
         }
 
         footer figure img {
-            filter: invert(1);
             width: 2vw;
             margin: 1vw;
             cursor: pointer;
@@ -480,4 +486,6 @@
 
         footer p {
             text-align: center;
+            font-family: 'Cantarell', sans-serif;
+            color: black;
         }
