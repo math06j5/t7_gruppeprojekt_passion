@@ -156,6 +156,11 @@
             font-family: 'Cantarell', sans-serif;
             font-weight: 700;
             font-size: 1rem;
+            text-align: left;
+        }
+
+        .splash .container article {
+            padding-left: 9vw;
         }
 
         header nav figure {
