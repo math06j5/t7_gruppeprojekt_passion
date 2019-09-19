@@ -17,7 +17,8 @@ body {
 }
 
 img {
-    width: 100%;
+    max-width: 100%;
+    height: auto;
 }
 
 figure {
@@ -464,7 +465,6 @@ header .down_arrow:hover {
         font-weight: bolder;
         transform: scale(1);
         transition: .5s;
-        margin: 0 2vw;
     }
 
     /* filtrerings knap hover effekt */
@@ -555,10 +555,17 @@ header .down_arrow:hover {
 
 /* detaljevisning lukke knap */
 #detalje .luk {
+    color: black;
     position: fixed;
     top: 0;
     right: 0;
-    font-size: 4rem;
+    font-size: 3rem;
+    padding: 0.5vw 1vw;
+    margin: 12px;
+    cursor: pointer;
+    background-color: #ffffff;
+    border-radius: 10px;
+    border: 2px solid black;
 }
 
 /* detaljevisning lukke knap */
