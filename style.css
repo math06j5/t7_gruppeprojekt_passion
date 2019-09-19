@@ -359,17 +359,23 @@ header .down_arrow:hover {
 
 /********** filtreringsmenu på mobil version glider ind fra højre **********/
 
+
+/* kassen til burgermenu linjerne */
 #FilterButton {
     display: flex;
+    /* Den får display flex for at burger-linjerne kommer under hinanden */
     position: fixed;
     flex-direction: column;
     top: 2vw;
     right: 2vw;
     border: 0;
+    /* her sletter vi default indstillingerne på "<button>" tagget */
     cursor: pointer;
-    background-color: rgba(255, 255, 255, 0)
+    background-color: rgba(255, 255, 255, 0);
+    /* her sletter vi default indstillingerne på "<button>" tagget */
 }
 
+/* burgermenu linjer */
 #FilterButton div {
     height: 2px;
     width: 10vw;
@@ -378,18 +384,20 @@ header .down_arrow:hover {
 }
 
 
-
+/* selve menueen */
 .Sidenav {
     height: 100%;
     width: 0;
     position: fixed;
     z-index: 100;
+    /* Den har en z-indeks for at komme frem foran alt andet */
     top: 0;
     right: 0;
     background-color: rgba(255, 255, 255, 0.90);
     overflow-x: hidden;
     padding-top: 60px;
     transition: 0.5s;
+    /* det tager 0,5 sekund at udføre animationen når man trykker på burgerikonet */
 }
 
 
@@ -403,7 +411,9 @@ header .down_arrow:hover {
     font-family: 'Cantarell', sans-serif;
     text-transform: uppercase;
     border: 0;
+    /* her sletter vi default indstillingerne på "<button>" tagget */
     background-color: rgba(255, 255, 255, 0.00);
+    /* her sletter vi default indstillingerne på "<button>" tagget */
 }
 
 /* filter knapper hover effekt */
@@ -437,6 +447,11 @@ header .down_arrow:hover {
 .filter {
     display: none;
     ;
+}
+
+/* valgt class på filtreringsbjælken */
+.valgt {
+    color: red;
 }
 
 /* filtrerings bjælke under splash billede */
@@ -473,11 +488,6 @@ header .down_arrow:hover {
         cursor: pointer;
         transform: scale(1.02);
         transition: .5s;
-    }
-
-    /* valgt class på filtreringsbjælken */
-    .valgt {
-        color: black;
     }
 
 }
