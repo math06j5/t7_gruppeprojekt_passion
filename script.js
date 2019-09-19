@@ -13,7 +13,6 @@
        console.log(url);
        const filterKnapper = document.querySelectorAll(".filter button, .Sidenav .filter, #random");
        filterKnapper.forEach(knap => knap.addEventListener("click", filtrerDestinationer));
-       //skjulDetalje();
        loadData();
        closeNav()
 
@@ -63,11 +62,8 @@
 
                const klon = skabelon.cloneNode(true);
 
-               //               klon.querySelector(".destination").style.backgroundImage = "img/" + destination.gsx$billede.$t + ".jpg";;
-               //               klon.querySelector(".destination").style.backgroundImage = "url('img/alaska.jpg')";;
                klon.querySelector(".destination").style.backgroundImage = "url('img/" + destination.gsx$billede.$t + ".jpg')";
                klon.querySelector(".destination").style.backgroundSize = "cover";
-               //               klon.querySelector(".dest-billede").src = "img/" + destination.gsx$billede.$t + ".jpg";
                klon.querySelector(".navn").textContent = destination.gsx$destination.$t;
 
                klon.querySelector(".destination").addEventListener("click", () => {
@@ -84,12 +80,8 @@
            if (destination.gsx$kategori.$t == filter || filter == "alle") { // tjek hvilken kategori destinationerne har og sammenling med filter
 
                const klon = skabelon.cloneNode(true);
-
-               //               klon.querySelector(".destination").style.backgroundImage = "img/" + destination.gsx$billede.$t + ".jpg";;
-               //               klon.querySelector(".destination").style.backgroundImage = "url('img/alaska.jpg')";;
                klon.querySelector(".destination").style.backgroundImage = "url('img/" + destination.gsx$billede.$t + ".jpg')";
                klon.querySelector(".destination").style.backgroundSize = "cover";
-               //               klon.querySelector(".dest-billede").src = "img/" + destination.gsx$billede.$t + ".jpg";
                klon.querySelector(".navn").textContent = destination.gsx$destination.$t;
 
                klon.querySelector(".destination").addEventListener("click", () => {
@@ -109,8 +101,6 @@
        document.querySelector("#detalje img").src = `img/${destination.gsx$billede.$t}.jpg`;
        document.querySelector("#detalje img").alt = `Billede af ${destination.gsx$billede}`;
        document.querySelector("#detalje .beskrivelse-kort").textContent = " " + destination.gsx$kort.$t;
-       //       document.querySelector("#detalje .pris").textContent = destination.gsx$pris.$t + " kr.";
-
        document.querySelector("#detalje .luk").addEventListener("click", skjulDetalje);
    }
 
@@ -141,5 +131,4 @@
    function closeNav() {
        console.log(document.querySelector("#rejse_destinationer"));
        document.querySelector("#Sidenav").style.width = "0";
-       //       document.style.backgroundColor = "white";
    }
