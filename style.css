@@ -165,9 +165,9 @@ header .down_arrow {
     position: absolute;
     filter: invert(1);
     bottom: 9vw;
-    left: 48.5vw;
-    width: 3vw;
-    height: 3vw;
+    left: 40vw;
+    width: 20vw;
+    height: 20vw;
     animation-name: puls;
     animation-duration: .9s;
     animation-iteration-count: infinite;
@@ -231,6 +231,13 @@ header .down_arrow:hover {
     .splash .container h1 {
         font-size: 6rem;
         line-height: 5rem;
+    }
+
+    header .down_arrow {
+        bottom: 5vw;
+        left: 45vw;
+        width: 10vw;
+        height: 10vw;
     }
 }
 
@@ -301,25 +308,11 @@ header .down_arrow:hover {
         transform: scale(1);
     }
 
-    #random:hover {
-        transition: .5s;
-        transform: scale(1.02);
-        background-color: #dbdbdb;
-    }
-
     header .down_arrow {
-        position: absolute;
-        filter: invert(1);
         bottom: 9vw;
         left: 48.5vw;
         width: 3vw;
         height: 3vw;
-        animation-name: puls;
-        animation-duration: .9s;
-        animation-iteration-count: infinite;
-        animation-fill-mode: both;
-        animation-timing-function: ease-in-out;
-        animation-direction: alternate;
     }
 
     @keyframes puls {
@@ -351,6 +344,14 @@ header .down_arrow:hover {
         flex-direction: row;
         justify-content: center;
         align-items: center;
+    }
+}
+
+@media only screen and (min-width: 1154px) {
+    header .down_arrow {
+        left: 48.5vw;
+        width: 3vw;
+        height: 3vw;
     }
 }
 
