@@ -22,7 +22,8 @@
 
    //En funktion der filtrerer destinationerne (json)
    function filtrerDestinationer() {
-       console.log("hej")
+       console.log("filtrerDestinationer");
+       //       document.querySelector("#Sidenav").style.width = "0"; //burger menu forsvinder ved at klikke på en filterknap
        filter = this.dataset.dest; //Sæt variable "filter" til aktuel værdi
        document.querySelector(".valgt").classList.remove("valgt"); // Fjern den valgte klasse på knappen
        this.classList.add("valgt"); //Marker den nye knap
@@ -121,14 +122,18 @@
 
    //****************** Burgermenu ******************//
 
-   /* sæt bredden på burgermenuen til 250px */
+   /* sæt bredden på burgermenuen til 50vw */
    function openNav() {
-       document.querySelector("#Sidenav").style.width = "250px";
+       document.querySelector("#Sidenav").style.width = "50vw";
+       //       document.querySelector("#FilterButton").style.display = "none";
        document.querySelector(".closebtn").addEventListener("click", closeNav);
+
    }
 
    /* sæt bredden på burgermenuen til 0px */
    function closeNav() {
+       console.log(closeNav);
        console.log(document.querySelector("#rejse_destinationer"));
        document.querySelector("#Sidenav").style.width = "0";
+       //       document.querySelector("#FilterButton").style.display = "flex";
    }

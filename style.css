@@ -44,6 +44,10 @@ h2 {
     font-weight: bolder;
 }
 
+.hide {
+    display: none;
+}
+
 /********************************************************************/
 
 
@@ -54,17 +58,20 @@ h2 {
     background-attachment: scroll;
     position: relative;
     width: 100vw;
-    height: 56.25vw;
+    height: 100vh;
     overflow: hidden
 }
 
 .splash video {
-    position: absolute;
-    top: 0;
-    left: 0;
+    display: none;
+}
+
+.splash figure {
+    background-image: url(img/splash.jpg);
+    background-size: cover;
+    background-position: 35%;
     width: 100vw;
-    height: auto;
-    overflow: hidden;
+    height: 100vh;
 }
 
 .splash .container {
@@ -147,30 +154,6 @@ header nav {
     text-transform: uppercase;
 }
 
-.logo .burger-icon {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    cursor: pointer;
-    transition: .4s;
-    transform: scale(1);
-    margin-left: 2vw;
-}
-
-.logo .burger-icon:hover {
-    transition: .4s;
-    transform: scale(1.02);
-}
-
-.logo .burger-icon div {
-    display: flex;
-    width: 5vw;
-    height: 2px;
-    margin: 2px;
-    background-color: black;
-}
-
 header nav figure {
     display: flex;
 }
@@ -196,7 +179,7 @@ header nav figure {
 header .down_arrow {
     position: absolute;
     filter: invert(1);
-    bottom: 5vw;
+    bottom: 9vw;
     left: 48.5vw;
     width: 3vw;
     height: 3vw;
@@ -239,25 +222,198 @@ header .down_arrow:hover {
     align-items: center;
 }
 
+@media only screen and (min-width: 1154px) {
+    .splash {
+        background-size: cover;
+        background-attachment: scroll;
+        position: relative;
+        width: 100vw;
+        height: 56.25vw;
+        overflow: hidden
+    }
+
+    .splash video {
+        display: inherit;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: auto;
+        overflow: hidden;
+    }
+
+    .splash .container {
+        position: absolute;
+        top: 40vh;
+        right: 5vw;
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    .splash .wrapper {
+        display: flex;
+        align-items: flex-end;
+        flex-direction: column;
+        width: 50vw;
+        text-align: right;
+    }
+
+    .splash .container h1 {
+        font-weight: 700;
+        font-family: 'Cantarell', sans-serif;
+        text-transform: uppercase;
+        font-size: 7rem;
+        line-height: 6rem;
+        color: white;
+    }
+
+    .splash .container h2 {
+        color: white;
+        font-family: 'Cantarell', sans-serif;
+        font-weight: 700;
+        text-transform: uppercase;
+        font-size: 2rem;
+        border-bottom: 2px solid white;
+        margin-top: .2vw;
+        margin-bottom: 1vw;
+    }
+
+    .splash .container p {
+        color: white;
+        font-family: 'Cantarell', sans-serif;
+        font-weight: 700;
+        font-size: 1rem;
+        text-align: left;
+    }
+
+    .splash .container article {
+        padding-left: 21.5vw;
+    }
+
+
+    header nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        min-height: 8vh;
+        background-color: ;
+        position: relative;
+    }
+
+    .logo {
+        text-transform: uppercase;
+        letter-spacing: 5px;
+        font-size: 2.2rem;
+        cursor: pointer;
+        display: flex;
+        width: 50vw;
+        padding: 2vw;
+    }
+
+    .logo img {
+        width: 5vw;
+        filter: invert(1);
+    }
+
+    .logo a {
+        color: black;
+        text-decoration: none;
+        font-family: sans-serif;
+        text-transform: uppercase;
+    }
+
+    header nav figure {
+        display: flex;
+    }
+
+    #random {
+        margin-top: 4vw;
+        padding: .7vw 1.5vw;
+        border-radius: 0;
+        border: 0;
+        cursor: pointer;
+        font-size: 1.5rem;
+        text-transform: uppercase;
+        transition: .5s;
+        transform: scale(1);
+    }
+
+    #random:hover {
+        transition: .5s;
+        transform: scale(1.02);
+        background-color: #dbdbdb;
+    }
+
+    header .down_arrow {
+        position: absolute;
+        filter: invert(1);
+        bottom: 9vw;
+        left: 48.5vw;
+        width: 3vw;
+        height: 3vw;
+        animation-name: puls;
+        animation-duration: .9s;
+        animation-iteration-count: infinite;
+        animation-fill-mode: both;
+        animation-timing-function: ease-in-out;
+        animation-direction: alternate;
+    }
+
+    @keyframes puls {
+        0% {
+            transform: translateY(-.2vw)
+        }
+
+        100% {
+            transform: translateY(1vw)
+        }
+    }
+
+    header .down_arrow:hover {
+        animation-name: pulsStop;
+    }
+
+    @keyframes pulsStop {
+        0% {
+            transform: translateY(0vw)
+        }
+
+        100% {
+            transform: translateY(0vw)
+        }
+    }
+
+    .container {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
 /********************************************************************/
 
 /********** filtreringsmenu på mobil version glider ind fra højre **********/
 
 #FilterButton {
-    display: inherit;
+    display: flex;
     position: fixed;
-    bottom: 1vw;
-    right: 1vw;
-    width: 10vw;
-    height: 10vw;
-    background-color: rgba(0, 0, 0, 0);
+    flex-direction: column;
+    top: 2vw;
+    right: 2vw;
     border: 0;
-    background-image: url(png/filter-tool-black-shape.svg);
-    background-repeat: no-repeat;
-    background-size: 80%;
-    background-position: 50%;
-    cursor: pointer
+    cursor: pointer;
+    background-color: rgba(255, 255, 255, 0)
 }
+
+#FilterButton div {
+    height: 2px;
+    width: 10vw;
+    margin: 3px;
+    background-color: black;
+}
+
+
 
 .Sidenav {
     height: 100%;
@@ -266,7 +422,7 @@ header .down_arrow:hover {
     z-index: 100;
     top: 0;
     right: 0;
-    background-color: white;
+    background-color: rgba(255, 255, 255, 0.90);
     overflow-x: hidden;
     padding-top: 60px;
     transition: 0.5s;
@@ -283,6 +439,7 @@ header .down_arrow:hover {
     font-family: 'Cantarell', sans-serif;
     text-transform: uppercase;
     border: 0;
+    background-color: rgba(255, 255, 255, 0.00);
 }
 
 /* filter knapper hover effekt */
