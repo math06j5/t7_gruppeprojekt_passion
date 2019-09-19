@@ -156,6 +156,11 @@ header nav figure {
     transform: scale(1);
 }
 
+.wrapper #random a {
+    text-decoration: none;
+    color: black;
+}
+
 #random:hover {
     transition: .5s;
     transform: scale(1.02);
@@ -377,7 +382,7 @@ header .down_arrow:hover {
 }
 
 /* burgermenu linjer */
-#FilterButton div {
+#FilterButton span {
     height: 2px;
     width: 10vw;
     margin: 3px;
