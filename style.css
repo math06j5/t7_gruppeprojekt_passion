@@ -589,13 +589,19 @@ header .down_arrow:hover {
     flex-direction: column;
 }
 
+#detalje .destination h2 {
+    color: black;
+    font-family: 'Cantarell', sans-serif;
+    text-align: left;
+    margin: 2vw;
+}
+
 #detalje .destination p {
     font-size: 1.4rem;
     color: black;
     font-family: 'Cantarell', sans-serif;
     text-align: left;
-    margin: 2vw;
-
+    margin: 0 2vw;
 }
 
 

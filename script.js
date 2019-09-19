@@ -101,6 +101,7 @@
        document.querySelector("#detalje").style.display = "block";
        document.querySelector("#detalje img").src = `img/${destination.gsx$billede.$t}.jpg`;
        document.querySelector("#detalje img").alt = `Billede af ${destination.gsx$billede}`;
+       document.querySelector("#detalje .navn").textContent = destination.gsx$destination.$t;
        document.querySelector("#detalje .beskrivelse-kort").textContent = " " + destination.gsx$kort.$t;
        document.querySelector("#detalje .luk").addEventListener("click", skjulDetalje);
    }
