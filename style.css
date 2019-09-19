@@ -259,7 +259,6 @@ header .down_arrow:hover {
         font-weight: 700;
         text-transform: uppercase;
         font-size: 2rem;
-        border-bottom: 2px solid white;
         margin-top: .2vw;
         margin-bottom: 1vw;
     }
@@ -313,7 +312,6 @@ header .down_arrow:hover {
     }
 
     #random {
-        margin-top: 4vw;
         padding: .7vw 1.5vw;
         border-radius: 0;
         border: 0;
