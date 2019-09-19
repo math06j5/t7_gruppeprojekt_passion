@@ -419,7 +419,7 @@ header .down_arrow:hover {
 
 /* filter knapper hover effekt */
 .Sidenav button:hover {
-    color: #f1f1f1;
+    color: #d8d8d8;
     cursor: pointer;
 }
 
@@ -452,7 +452,7 @@ header .down_arrow:hover {
 
 /* valgt class på filtreringsbjælken */
 .valgt {
-    color: red;
+    color: black;
 }
 
 /* filtrerings bjælke under splash billede */
