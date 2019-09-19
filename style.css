@@ -1,493 +1,519 @@
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            font-size: 62.5%;
-            scroll-behavior: smooth;
-        }
-
-        body {
-            margin: 0;
-            padding: 0;
-        }
-
-        img {
-            width: 100%;
-        }
-
-        figure {
-            margin: 0;
-            padding: 0;
-        }
-
-        ul {
-            padding: 0;
-            margin: 0;
-        }
-
-        li {
-            padding: 0;
-            margin: 0;
-        }
-
-
-        h2 {
-            font-family: 'Cantarell', sans-serif;
-            text-transform: uppercase;
-            font-size: 2.3rem;
-            color: white;
-            font-weight: bolder;
-        }
-
-        .splash {
-            background-size: cover;
-            background-attachment: scroll;
-            position: relative;
-            width: 100vw;
-            height: 56.25vw;
-            overflow: hidden
-        }
-
-        .splash video {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100vw;
-            height: auto;
-            overflow: hidden;
-        }
-
-        header nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            min-height: 8vh;
-            background-color: ;
-            position: relative;
-        }
-
-        .logo {
-            text-transform: uppercase;
-            letter-spacing: 5px;
-            font-size: 2.2rem;
-            cursor: pointer;
-            display: flex;
-            width: 50vw;
-            padding: 2vw;
-        }
-
-        .logo img {
-            width: 5vw;
-            filter: invert(1);
-        }
-
-        .logo a {
-            color: black;
-            text-decoration: none;
-            font-family: sans-serif;
-            text-transform: uppercase;
-        }
-
-        .logo .burger-icon {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-            cursor: pointer;
-            transition: .4s;
-            transform: scale(1);
-            margin-left: 2vw;
-        }
-
-        .logo .burger-icon:hover {
-            transition: .4s;
-            transform: scale(1.02);
-        }
-
-        .logo .burger-icon div {
-            display: flex;
-            width: 5vw;
-            height: 2px;
-            margin: 2px;
-            background-color: black;
-        }
-
-        .splash .container {
-            position: absolute;
-            top: 40vh;
-            right: 5vw;
-            display: flex;
-            justify-content: flex-end;
-        }
-
-        .splash .wrapper {
-            display: flex;
-            align-items: flex-end;
-            flex-direction: column;
-            width: 50vw;
-            text-align: right;
-        }
-
-        .splash .container h1 {
-            font-weight: 700;
-            font-family: 'Cantarell', sans-serif;
-            text-transform: uppercase;
-            font-size: 7rem;
-            line-height: 6rem;
-            color: white;
-        }
-
-        .splash .container h2 {
-            color: white;
-            font-family: 'Cantarell', sans-serif;
-            font-weight: 700;
-            text-transform: uppercase;
-            font-size: 2rem;
-            border-bottom: 2px solid white;
-            margin-top: .2vw;
-            margin-bottom: 1vw;
-        }
-
-        .splash .container p {
-            color: white;
-            font-family: 'Cantarell', sans-serif;
-            font-weight: 700;
-            font-size: 1rem;
-            text-align: left;
-        }
-
-        .splash .container article {
-            padding-left: 21.5vw;
-        }
-
-        header nav figure {
-            display: flex;
-        }
-
-        #random {
-            margin-top: 4vw;
-            padding: .7vw 1.5vw;
-            border-radius: 0;
-            border: 0;
-            cursor: pointer;
-            font-size: 1.5rem;
-            text-transform: uppercase;
-            transition: .5s;
-            transform: scale(1);
-        }
-
-        #random:hover {
-            transition: .5s;
-            transform: scale(1.02);
-            background-color: #dbdbdb;
-        }
-
-        header .down_arrow {
-            position: absolute;
-            filter: invert(1);
-            bottom: 5vw;
-            left: 48.5vw;
-            width: 3vw;
-            height: 3vw;
-            animation-name: puls;
-            animation-duration: .9s;
-            animation-iteration-count: infinite;
-            animation-fill-mode: both;
-            animation-timing-function: ease-in-out;
-            animation-direction: alternate;
-        }
-
-        @keyframes puls {
-            0% {
-                transform: translateY(-.2vw)
-            }
-
-            100% {
-                transform: translateY(1vw)
-            }
-        }
-
-        header .down_arrow:hover {
-            animation-name: pulsStop;
-        }
-
-        @keyframes pulsStop {
-            0% {
-                transform: translateY(0vw)
-            }
-
-            100% {
-                transform: translateY(0vw)
-            }
-        }
-
-        .container {
-            display: flex;
-            flex-direction: row;
-            justify-content: center;
-            align-items: center;
-        }
-
-        /********************************************************************/
-
-        /********** filtreringsmenu på mobil version glider ind fra højre **********/
-
-        #FilterButton {
-            display: inherit;
-            position: fixed;
-            bottom: 1vw;
-            right: 1vw;
-            width: 5vw;
-            height: 5vw;
-            background-color: rgba(0, 0, 0, 0);
-            border: 0;
-            background-image: url(png/settings.svg);
-            background-repeat: no-repeat;
-            background-size: 80%;
-            background-position: 50%;
-            cursor: pointer
-        }
-
-        .Sidenav {
-            height: 100%;
-            width: 0;
-            position: fixed;
-            z-index: 100;
-            top: 0;
-            right: 0;
-            background-color: white;
-            overflow-x: hidden;
-            padding-top: 60px;
-            transition: 0.5s;
-        }
-
-
-        /* filter knapper*/
-        .Sidenav button {
-            padding: 8px 8px 8px 32px;
-            font-size: 25px;
-            color: black;
-            display: block;
-            transition: 0.3s;
-            font-family: 'Cantarell', sans-serif;
-            text-transform: uppercase;
-        }
-
-        /* filter knapper hover effekt */
-        .Sidenav button:hover {
-            color: #f1f1f1;
-            cursor: pointer;
-        }
-
-        /* lukkeknap filtreringsmenu */
-        .Sidenav .closebtn {
-            position: absolute;
-            top: 0;
-            right: 25px;
-            font-size: 36px;
-            margin-left: 50px;
-        }
-
-        /* ved skærme over 1154px skal filtreringsknapper samt menu'en ikke vises */
-        /* skærme som er større end en ipad */
-        @media only screen and (min-width: 1154px) {
-            #FilterButton {
-                display: none;
-            }
-        }
-
-        /********************************************************************/
-
-
-        /********** filtreringsbjælke under splash **********/
-
-        /* filtrerings bjælke under splash billede */
-        .filter {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-around;
-            align-content: center;
-            padding: 0 10vw 0 10vw;
-            margin: 2vw;
-        }
-
-
-        /* filtrerings knap styling */
-        .filter button {
-            border: 0;
-            color: black;
-            font-family: 'Cantarell', sans-serif;
-            font-weight: bold;
-            text-transform: uppercase;
-            font-size: 1.7rem;
-            flex-basis: 100px;
-            font-weight: bolder;
-            transform: scale(1);
-            transition: .5s;
-        }
-
-        /* filtrerings knap hover effekt */
-        .filter button:hover {
-            color: black;
-            cursor: pointer;
-            transform: scale(1.02);
-            transition: .5s;
-        }
-
-        /* valgt class på filtreringsbjælken */
-        .valgt {
-            color: black;
-        }
-
-        /********************************************************************/
-
-        /********** sektion med rejsedestinationer **********/
-
-        /* overordnet grid styling */
-        #rejse_destinationer {
-            margin-top: 0vw;
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            grid-gap: 1vw;
-            padding: 0vw 10vw;
-        }
-
-        /* styling af destinationer */
-        .destination {
-            display: flex;
-            justify-content: center;
-            flex-direction: column;
-            align-items: center;
-            font-family: monospace;
-            text-align: center;
-            background: rgba(255, 255, 255, 0.79);
-            height: 300px;
-            width: 100%;
-            cursor: pointer;
-        }
-
-
-        .destination .navn {
-            position: relative;
-        }
-
-        /* effekt på destination - linje kører ud til hver side fra midten */
-        .destination .navn::after {
-            content: '';
-            display: block;
-            border-bottom: solid 3px white;
-            transform: scaleX(0);
-            transition: transform .3s ease-in-out;
-        }
-
-        /* hover effekt som afktiver overnstående ::after (effekt) */
-        .destination:hover h2::after {
-            transform: scaleX(.7);
-        }
-
-        /********************************************************************/
-
-        /********** deltaje visning for destinationer **********/
-
-        #detalje {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100vw;
-            height: 100vh;
-            margin: 0;
-            background: rgba(255, 255, 255, 0.79);
-            overflow: scroll;
-            display: flex;
-            justify-content: space-around;
-            align-items: center;
-            display: none;
-        }
-
-        /* detaljevisning lukke knap */
-        #detalje .luk {
-            position: fixed;
-            top: 0;
-            right: 0;
-            font-size: 4rem;
-        }
-
-        /* detaljevisning lukke knap */
-        #detalje .destination {
-            width: 50vw;
-            min-height: 50vh;
-            margin: 4rem auto;
-            padding: 20vw 0 50vw;
-            background: rgb(255, 255, 255);
-            display: flex;
-            flex-direction: column;
-        }
-
-        #detalje .destination p {
-            font-size: 1.5rem;
-            color: black;
-            font-family: 'Cantarell', sans-serif;
-            text-align: left;
-        }
-
-
-        /********************************************************************/
-
-        /********** Footer **********/
-        footer {
-            display: flex;
-            justify-content: center;
-            flex-direction: column;
-            margin-top: 7vw;
-            padding: 3vw 2vw;
-        }
-
-        /* footer top devider */
-        footer::before {
-            content: "";
-            border-top: 2px solid black;
-            width: 90%;
-            margin: auto;
-        }
-
-        footer section {
-            display: flex;
-            flex-direction: row;
-            justify-content: space-between;
-            margin-top: 3vw;
-        }
-
-        footer article {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-        }
-
-        footer a {
-            text-decoration: none;
-            color: black;
-            cursor: pointer;
-        }
-
-        footer figure {
-            display: flex;
-        }
-
-        footer figure img {
-            width: 2vw;
-            margin: 1vw;
-            cursor: pointer;
-        }
-
-        footer figure img:nth-child(1) {
-            margin-left: 0;
-        }
-
-        footer p {
-            text-align: center;
-            font-family: 'Cantarell', sans-serif;
-            color: black;
-        }
+/********** Generelt **********/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+img {
+    width: 100%;
+}
+
+figure {
+    margin: 0;
+    padding: 0;
+}
+
+ul {
+    padding: 0;
+    margin: 0;
+}
+
+li {
+    padding: 0;
+    margin: 0;
+}
+
+
+h2 {
+    font-family: 'Cantarell', sans-serif;
+    text-transform: uppercase;
+    font-size: 2.3rem;
+    color: white;
+    font-weight: bolder;
+}
+
+/********************************************************************/
+
+
+/********** splash **********/
+
+.splash {
+    background-size: cover;
+    background-attachment: scroll;
+    position: relative;
+    width: 100vw;
+    height: 56.25vw;
+    overflow: hidden
+}
+
+.splash video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: auto;
+    overflow: hidden;
+}
+
+.splash .container {
+    position: absolute;
+    top: 40vh;
+    right: 5vw;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.splash .wrapper {
+    display: flex;
+    align-items: flex-end;
+    flex-direction: column;
+    width: 50vw;
+    text-align: right;
+}
+
+.splash .container h1 {
+    font-weight: 700;
+    font-family: 'Cantarell', sans-serif;
+    text-transform: uppercase;
+    font-size: 7rem;
+    line-height: 6rem;
+    color: white;
+}
+
+.splash .container h2 {
+    color: white;
+    font-family: 'Cantarell', sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 2rem;
+    border-bottom: 2px solid white;
+    margin-top: .2vw;
+    margin-bottom: 1vw;
+}
+
+.splash .container p {
+    color: white;
+    font-family: 'Cantarell', sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
+    text-align: left;
+}
+
+.splash .container article {
+    padding-left: 21.5vw;
+}
+
+
+header nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 8vh;
+    background-color: ;
+    position: relative;
+}
+
+.logo {
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    font-size: 2.2rem;
+    cursor: pointer;
+    display: flex;
+    width: 50vw;
+    padding: 2vw;
+}
+
+.logo img {
+    width: 5vw;
+    filter: invert(1);
+}
+
+.logo a {
+    color: black;
+    text-decoration: none;
+    font-family: sans-serif;
+    text-transform: uppercase;
+}
+
+.logo .burger-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    cursor: pointer;
+    transition: .4s;
+    transform: scale(1);
+    margin-left: 2vw;
+}
+
+.logo .burger-icon:hover {
+    transition: .4s;
+    transform: scale(1.02);
+}
+
+.logo .burger-icon div {
+    display: flex;
+    width: 5vw;
+    height: 2px;
+    margin: 2px;
+    background-color: black;
+}
+
+header nav figure {
+    display: flex;
+}
+
+#random {
+    margin-top: 4vw;
+    padding: .7vw 1.5vw;
+    border-radius: 0;
+    border: 0;
+    cursor: pointer;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    transition: .5s;
+    transform: scale(1);
+}
+
+#random:hover {
+    transition: .5s;
+    transform: scale(1.02);
+    background-color: #dbdbdb;
+}
+
+header .down_arrow {
+    position: absolute;
+    filter: invert(1);
+    bottom: 5vw;
+    left: 48.5vw;
+    width: 3vw;
+    height: 3vw;
+    animation-name: puls;
+    animation-duration: .9s;
+    animation-iteration-count: infinite;
+    animation-fill-mode: both;
+    animation-timing-function: ease-in-out;
+    animation-direction: alternate;
+}
+
+@keyframes puls {
+    0% {
+        transform: translateY(-.2vw)
+    }
+
+    100% {
+        transform: translateY(1vw)
+    }
+}
+
+header .down_arrow:hover {
+    animation-name: pulsStop;
+}
+
+@keyframes pulsStop {
+    0% {
+        transform: translateY(0vw)
+    }
+
+    100% {
+        transform: translateY(0vw)
+    }
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+/********************************************************************/
+
+/********** filtreringsmenu på mobil version glider ind fra højre **********/
+
+#FilterButton {
+    display: inherit;
+    position: fixed;
+    bottom: 1vw;
+    right: 1vw;
+    width: 10vw;
+    height: 10vw;
+    background-color: rgba(0, 0, 0, 0);
+    border: 0;
+    background-image: url(png/filter-tool-black-shape.svg);
+    background-repeat: no-repeat;
+    background-size: 80%;
+    background-position: 50%;
+    cursor: pointer
+}
+
+.Sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 100;
+    top: 0;
+    right: 0;
+    background-color: white;
+    overflow-x: hidden;
+    padding-top: 60px;
+    transition: 0.5s;
+}
+
+
+/* filter knapper*/
+.Sidenav button {
+    padding: 8px 8px 8px 32px;
+    font-size: 25px;
+    color: black;
+    display: block;
+    transition: 0.3s;
+    font-family: 'Cantarell', sans-serif;
+    text-transform: uppercase;
+    border: 0;
+}
+
+/* filter knapper hover effekt */
+.Sidenav button:hover {
+    color: #f1f1f1;
+    cursor: pointer;
+}
+
+/* lukkeknap filtreringsmenu */
+.Sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+/* ved skærme over 1154px skal filtreringsknapper samt menu'en ikke vises */
+/* skærme som er større end en ipad */
+@media only screen and (min-width: 1154px) {
+    #FilterButton {
+        display: none;
+    }
+}
+
+/********************************************************************/
+
+
+/********** filtreringsbjælke under splash **********/
+
+.filter {
+    display: none;
+    ;
+}
+
+/* filtrerings bjælke under splash billede */
+@media only screen and (min-width: 1154px) {
+
+    .filter {
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: space-around;
+        align-content: center;
+        padding: 0 10vw 0 10vw;
+        margin: 2vw;
+    }
+
+
+    /* filtrerings knap styling */
+    .filter button {
+        border: 0;
+        color: black;
+        font-family: 'Cantarell', sans-serif;
+        font-weight: bold;
+        text-transform: uppercase;
+        font-size: 1.7rem;
+        flex-basis: 100px;
+        font-weight: bolder;
+        transform: scale(1);
+        transition: .5s;
+        margin: 0 2vw;
+    }
+
+    /* filtrerings knap hover effekt */
+    .filter button:hover {
+        color: black;
+        cursor: pointer;
+        transform: scale(1.02);
+        transition: .5s;
+    }
+
+    /* valgt class på filtreringsbjælken */
+    .valgt {
+        color: black;
+    }
+
+}
+
+/********************************************************************/
+
+/********** sektion med rejsedestinationer **********/
+#rejse_destinationer {
+    margin-top: 2vw;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-gap: 1vw;
+    padding: 0vw 10vw;
+}
+
+/* styling af destinationer */
+.destination {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    font-family: monospace;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.79);
+    height: 300px;
+    width: 100%;
+    cursor: pointer;
+}
+
+
+.destination .navn {
+    position: relative;
+}
+
+/* effekt på destination - linje kører ud til hver side fra midten */
+.destination .navn::after {
+    content: '';
+    display: block;
+    border-bottom: solid 3px white;
+    transform: scaleX(0);
+    transition: transform .3s ease-in-out;
+}
+
+/* hover effekt som afktiver overnstående ::after (effekt) */
+.destination:hover h2::after {
+    transform: scaleX(.7);
+}
+
+@media only screen and (min-width: 1154px) {
+
+    /* overordnet grid styling */
+    #rejse_destinationer {
+        margin-top: 0vw;
+    }
+}
+
+/********************************************************************/
+
+/********** deltaje visning for destinationer **********/
+
+#detalje {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    background: rgba(255, 255, 255, 0.79);
+    overflow: scroll;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    display: none;
+}
+
+/* detaljevisning lukke knap */
+#detalje .luk {
+    position: fixed;
+    top: 0;
+    right: 0;
+    font-size: 4rem;
+}
+
+/* detaljevisning lukke knap */
+#detalje .destination {
+    width: 50vw;
+    min-height: 50vh;
+    margin: 4rem auto;
+    padding: 20vw 0 50vw;
+    background: rgb(255, 255, 255);
+    display: flex;
+    flex-direction: column;
+}
+
+#detalje .destination p {
+    font-size: 1.5rem;
+    color: black;
+    font-family: 'Cantarell', sans-serif;
+    text-align: left;
+}
+
+
+/********************************************************************/
+
+/********** Footer **********/
+
+footer {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 7vw;
+    padding: 3vw 2vw;
+}
+
+/* footer top devider */
+footer::before {
+    content: "";
+    border-top: 2px solid black;
+    width: 90%;
+    margin: auto;
+}
+
+footer section {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 3vw;
+}
+
+footer article {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+footer a {
+    text-decoration: none;
+    color: black;
+    cursor: pointer;
+}
+
+footer figure {
+    display: flex;
+}
+
+footer figure img {
+    width: 2vw;
+    margin: 1vw;
+    cursor: pointer;
+}
+
+footer figure img:nth-child(1) {
+    margin-left: 0;
+}
+
+footer p {
+    text-align: center;
+    font-family: 'Cantarell', sans-serif;
+    color: black;
+}

@@ -21,7 +21,7 @@
        document.querySelector("#FilterButton").addEventListener("click", openNav);
    }
 
-   //En funktion der filtrerer retterne (json)
+   //En funktion der filtrerer destinationerne (json)
    function filtrerDestinationer() {
        console.log("hej")
        filter = this.dataset.dest; //Sæt variable "filter" til aktuel værdi
@@ -46,6 +46,7 @@
        placering.textContent = ""; //Slet det der står i filter
 
 
+       //vis/filtrer randomfunktion
        if (filter == "random") {
            const randomTal = Math.floor(Math.random() * antalRows); // Random-funktionen laves for at kunne fremvise en tilfældig destination
            const destination = destinationer.feed.entry[randomTal]; // Den random destination kaldes
@@ -58,7 +59,7 @@
 
            document.querySelector("#detalje .luk").addEventListener("click", skjulDetaljeRandom);
 
-           { // tjek hvilket køn retten har og sammenling med filter
+           { // tjek hvilken kategori destinationerne har og sammenling med filter
 
                const klon = skabelon.cloneNode(true);
 
@@ -78,8 +79,9 @@
 
        }
 
-       destinationer.feed.entry.forEach((destination) => { //Her looper vi igennem json (retterne)
-           if (destination.gsx$kategori.$t == filter || filter == "alle") { // tjek hvilket køn retten har og sammenling med filter
+       //vis/filtrer destinationer
+       destinationer.feed.entry.forEach((destination) => { //Her looper vi igennem json (destinationerne)
+           if (destination.gsx$kategori.$t == filter || filter == "alle") { // tjek hvilken kategori destinationerne har og sammenling med filter
 
                const klon = skabelon.cloneNode(true);
 
@@ -100,7 +102,7 @@
    }
 
 
-
+   //viser detalje visning
    function visDetalje(destination) {
        console.log(destination);
        document.querySelector("#detalje").style.display = "block";
@@ -112,34 +114,32 @@
        document.querySelector("#detalje .luk").addEventListener("click", skjulDetalje);
    }
 
+   //skjuler detalje visning
    function skjulDetalje() {
        console.log(skjulDetalje);
        document.querySelector("#detalje").style.display = "none";
    }
 
-
-
-
-   //******************
-
-   /* Set the width of the side navigation to 250px and the left margin of the page content to 250px and add a black background color to body */
-   function openNav() {
-       document.querySelector("#Sidenav").style.width = "250px";
-       //       document.style.backgroundColor = "rgba(0,0,0,0.4)";
-       document.querySelector(".closebtn").addEventListener("click", closeNav);
-   }
-
-   /* Set the width of the side navigation to 0 and the left margin of the page content to 0, and the background color of body to white */
-   function closeNav() {
-       console.log(document.querySelector("#rejse_destinationer"));
-       document.querySelector("#Sidenav").style.width = "0";
-       //       document.style.backgroundColor = "white";
-   }
-
-
+   //skjuler detalje visning for random knappen
    function skjulDetaljeRandom() {
        console.log(skjulDetaljeRandom);
        document.querySelector("#detalje").style.display = "none";
        filter = "alle";
        vis();
+   }
+
+
+   //****************** Burgermenu ******************//
+
+   /* sæt bredden på burgermenuen til 250px */
+   function openNav() {
+       document.querySelector("#Sidenav").style.width = "250px";
+       document.querySelector(".closebtn").addEventListener("click", closeNav);
+   }
+
+   /* sæt bredden på burgermenuen til 0px */
+   function closeNav() {
+       console.log(document.querySelector("#rejse_destinationer"));
+       document.querySelector("#Sidenav").style.width = "0";
+       //       document.style.backgroundColor = "white";
    }
